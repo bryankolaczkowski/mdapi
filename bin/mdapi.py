@@ -260,7 +260,7 @@ optparser.set_defaults(verbose=True,
                        neutralize=True,
                        margin=15,               # 15 angstrom margin for sim box
                        boxtype="dodecahedron",  # rhombic dodecahedron sim box
-                       mdthreads=4,
+                       mdthreads=8,
                        randseed=int(os.urandom(2).hex(), 16),
                        continuemd=False,
                        forcefield=defff,
@@ -415,7 +415,7 @@ GMX = options.gromacs
 if not GMX:
     sys.stderr.write("ERROR: GROMACS gmx executable is not in your PATH\n")
     sys.stderr.write("  please either upate your PATH environment variable to include your gromacs\n")
-    sys.stderr.write("  installation, or provide the loaction of gmx using the --gromacs=GMX option\n")
+    sys.stderr.write("  installation, or provide the loaction of gmx using the --gmx=GMX option\n")
 
 PDB2PQR = options.pdb2pqr
 if not PDB2PQR and runtype == valid_runtypes[0]:
