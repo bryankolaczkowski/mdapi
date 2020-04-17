@@ -610,8 +610,9 @@ if options.verbose:
 # convert charmm output file name,       #
 # which currently imposes all-lower-case #
 # to protbasename                        #
-for qmapname in grids:
-    os.system("mv %s.%s.qmapout %s.%s.qmapout" % (protbasename.lower(), qmapname, protbasename, qmapname))
+if protbasename.lower() != protbasename:
+    for qmapname in grids:
+        os.system("mv %s.%s.qmapout %s.%s.qmapout" % (protbasename.lower(), qmapname, protbasename, qmapname))
 
 # quietly remove gmx backup files #
 os.system("rm -f \#*\#")
